@@ -1,0 +1,12 @@
+## 178. Rank Scores
+## https://leetcode.com/problems/rank-scores/description/
+
+import pandas as pd
+
+def order_scores(scores: pd.DataFrame) -> pd.DataFrame:
+
+    scores['rank'] = scores['score'].rank(method = 'dense', ascending = False)
+    
+    return scores[['score', 'rank']].sort_values('score', ascending = False)
+
+    # Careful! scores.sort_values('score', ascending=False) will return entire dataframe 
