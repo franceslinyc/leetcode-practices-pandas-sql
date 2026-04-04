@@ -1,6 +1,7 @@
 ## 178. Rank Scores
 ## https://leetcode.com/problems/rank-scores/description/
 
+
 import pandas as pd
 
 def order_scores(scores: pd.DataFrame) -> pd.DataFrame:
