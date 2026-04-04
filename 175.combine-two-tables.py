@@ -17,7 +17,7 @@ def combine_two_tables(person: pd.DataFrame, address: pd.DataFrame) -> pd.DataFr
     return result
 
 
-# Examples from Data Wrangling with pandas Cheat Sheet from Posit
+# Data Wrangling with pandas Cheat Sheet
 
 # table1   table 2
 
