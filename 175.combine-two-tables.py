@@ -8,9 +8,9 @@ def combine_two_tables(person: pd.DataFrame, address: pd.DataFrame) -> pd.DataFr
 
     result = pd.merge(person, address, on = 'personId', how = 'left') 
     
-    # on = 'personId': Use 'personId' as key for merging data
-    # how = 'left': Perform left join, meaning all records from person will be retained. 
-    # If there is no match, 'city' & 'state' will contain NULL values.
+                                     # on = 'personId': Use 'personId' as key for merging data
+                                     # how = 'left': Perform left join, meaning all records from person will be retained. 
+                                     # If there is no match, 'city' & 'state' will contain NULL values.
 
     result = result[['firstName', 'lastName', 'city', 'state']]
 
