@@ -14,6 +14,11 @@ def department_highest_salary(employee: pd.DataFrame, department: pd.DataFrame) 
     df = df.rename(columns={'name_x': 'Employee', 'name_y': 'Department', 'salary': 'Salary'})
     
     max_salary = df.groupby('Department')['Salary'].transform('max')
+
+                 # df.groupby('Department'): Group by 'Department'
+                 # ['Salary']: Select the 'Salary' column
+                 # transform(): Apply a function to each group
+                 # Careful! transform() only works on Series, so use [], not [[]].
     
     df = df[df['Salary'] == max_salary]
     
