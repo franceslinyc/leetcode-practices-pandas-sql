@@ -42,7 +42,7 @@ def nth_highest_salary(employee: pd.DataFrame, N: int) -> pd.DataFrame:
 # 3   spider          8.0
 # 4    snake          NaN
 
-# >>> df['rank'] = df['Number_legs'].rank(method = 'min')
+# >>> df['rank'] = df['Number_legs'].rank(method = 'min') # Default ascending = True
 # >>> df
 #     Animal	Number_legs	rank
 # 0	     cat	        4.0	2.0
