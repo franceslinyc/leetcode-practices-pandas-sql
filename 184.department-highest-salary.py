@@ -10,8 +10,11 @@ def department_highest_salary(employee: pd.DataFrame, department: pd.DataFrame) 
 
                                         # left_on: Column or index level names to join on in the **left** DataFrame.
                                         # right_on: Column or index level names to join on in the **right** DataFrame.
+                 
+                 # Because id and name both column name in employee and department, after the merge, the table will become 
+                 # id_x, name_x, salary, departmentId, id_y, name_y, so we need to rename next.  
 
-    df = df.rename(columns={'name_x': 'Employee', 'name_y': 'Department', 'salary': 'Salary'})
+    df = df.rename(columns = {'name_x': 'Employee', 'name_y': 'Department', 'salary': 'Salary'})
     
     max_salary = df.groupby('Department')['Salary'].transform('max')
 
@@ -21,6 +24,8 @@ def department_highest_salary(employee: pd.DataFrame, department: pd.DataFrame) 
                  # Careful! transform() only works on Series, so use [], not [[]].
     
     df = df[df['Salary'] == max_salary]
+
+                 # df[df['Salary'] == max_salary]: Filter rows where the condition is True 
     
     return df[['Department', 'Employee', 'Salary']]
 

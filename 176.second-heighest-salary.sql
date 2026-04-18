@@ -3,7 +3,7 @@
 
 -- This does not take care of NULL
 
-SELECT DISTINCT
+SELECT DISTINCT  -- Return only unique row
     Salary AS SecondHighestSalary
 FROM
     Employee

@@ -13,7 +13,7 @@ def nth_highest_salary(employee: pd.DataFrame, N: int) -> pd.DataFrame:
 
     res = employee[employee['rank'] == N][['salary']]
 
-                  # employee[employee['rank'] == N]: Filter rows
+                  # employee[employee['rank'] == N]: Filter rows where the condition is True
                   # [['salary']]: Select columns
                   # Careful! [[]] return DataFrame. [] return Series.
 
