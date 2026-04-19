@@ -21,14 +21,18 @@ def duplicate_emails(person: pd.DataFrame) -> pd.DataFrame:
     email_counts = person.groupby('email').size().reset_index(name = 'counts')
 
                                           # .size(): Counts # of rows in each group
+                                          # Return a series where
+                                          #   - index: unique email values
+                                          #   - value: # of rows per email
                                           # .reset_index(): Converts the index into a column and assign a new default integer index
-
+                                          # Return a DataFrame
+                                          #   - one column from index (email)
+                                          #   - one column from value (default name 0)
+                                          # name = "counts": Assign a name to the value column 
+    
     result = email_counts[email_counts['counts'] > 1][['email']]
 
     return result
-
-             # .index: Grab the key
-             # to_frame: Turn this into a DataFrame
 
 
 # >>> person = pd.DataFrame({
