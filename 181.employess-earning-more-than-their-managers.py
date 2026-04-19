@@ -1,6 +1,7 @@
 ## 181. Employees Earning More Than Their Managers
 ## https://leetcode.com/problems/employees-earning-more-than-their-managers/description/
 
+
 import pandas as pd
 
 def find_employees(employee: pd.DataFrame) -> pd.DataFrame:

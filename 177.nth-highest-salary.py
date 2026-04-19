@@ -11,19 +11,19 @@ def nth_highest_salary(employee: pd.DataFrame, N: int) -> pd.DataFrame:
     employee['rank'] = employee['salary'].rank(method = 'dense', ascending = False) 
                                               # method = 'dense': Rank with no gap
 
-    res = employee[employee['rank'] == N][['salary']]
+    result = employee[employee['rank'] == N][['salary']]
 
                   # employee[employee['rank'] == N]: Filter rows where the condition is True
                   # [['salary']]: Select columns
                   # Careful! [[]] return DataFrame. [] return Series.
 
-    if res.empty:
+    if result.empty:
 
         return pd.DataFrame({f'getNthHighestSalary({N})': [None]})
 
-    res = res.rename(columns = {'salary': f'getNthHighestSalary({N})'})
+    result = result.rename(columns = {'salary': f'getNthHighestSalary({N})'})
 
-    return res
+    return result
 
 
 # # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rank.html
